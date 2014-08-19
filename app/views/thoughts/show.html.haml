@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @thought.name
+%p
+  %b Description:
+  = @thought.description
+%p
+  %b Picture:
+  = @thought.picture
+
+= link_to 'Edit', edit_thought_path(@thought)
+\|
+= link_to 'Back', thoughts_path
