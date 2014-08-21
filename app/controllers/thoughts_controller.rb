@@ -10,6 +10,9 @@ class ThoughtsController < ApplicationController
   # GET /thoughts/1
   # GET /thoughts/1.json
   def show
+    @thought = Thought.find(params[:id])
+    @comments = @thought.comments.all
+    @comment = @thought.comments.build
   end
 
   # GET /thoughts/new

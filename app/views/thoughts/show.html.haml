@@ -8,7 +8,19 @@
   = @thought.description
 %p
   %b Picture:
-  = @thought.picture
+  = image_tag @thought.picture_url, :width => 'auto' if @thought.picture.present?
+
+%h3 Comments
+- if @comments
+  - @comments.each do |comment|
+    %div
+      %strong= comment.user_name
+      %p= comment.body
+      %p
+        = link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Can I delete this comment?' }
+
+  = render 'comments/form'
+
 
 = link_to 'Edit', edit_thought_path(@thought)
 \|

@@ -47,3 +47,7 @@ gem 'execjs'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry'
+end
